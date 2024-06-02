@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display URL Parameters</title>
+        <script>
+            window.onload = function() {
+                // Получаем параметры из URL
+                const params = new URLSearchParams(window.location.search);
+                const name = params.get('name');
+                const price = params.get('price');
+                
+                // Отображаем параметры на странице
+                if (name) {
+                    document.getElementById('name').textContent = name;
+                }
+                if (price) {
+                    document.getElementById('price').textContent = price;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Информация о товаре</h1>
+        <p><strong>Имя:</strong> <span id="name"></span></p>
+        <p><strong>Цена:</strong> <span id="price"></span></p>
+    </body>
+    </html>
+    
